@@ -1,0 +1,244 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+
+    <div class="col-12 col-lg-6" style="background-color: rgb(28, 28, 70);">
+        <img src="/img/hom.jpg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy"
+            alt="Cooking With Node.js">
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">Massive Selection of News</h1>
+        <p class="lead">
+            Explore our huge selection of news; word wide; True; eeasy accesses, latest news; and what you need to know
+            about any intancess, precious uptades from the blog, quick fatser, many reportes in the world are together. Newly received or noteworthy information, especially about recent or important events .
+        </p>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+            <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Categories Start -->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+
+    <% if(categories != '') { %>
+      <% categories.forEach(function(category, index) { %>
+        <a href="/categories/<%- category.name %>" class="col text-center category__link">
+          <div class="category__img shadow">
+            <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%- category.name %></div>
+        </a>
+      <% }) %>
+    <% } %>
+  
+    <a href="/categories" class="col text-center category__link">
+      <div class="category__img shadow">
+        <img src="img/al.jpg" alt="View All Categories" loading="lazy">
+      </div>
+      <div class="pt-1">View All</div>
+    </a>
+  
+  </div>
+
+<!-- Categories End -->
+
+
+<!-- Latest Start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Latest News</h2>
+      <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+  
+      <% if(hot != '') { %>
+        <% hot.latest.forEach(function(news, index){ %>
+        <a href="/news/<%= news._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy" width="966" height="208">
+          </div>
+          <div class="pt-1"><%= news.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  
+  </section>
+  <!-- Latest End -->
+
+
+  <!-- Local news -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Local News</h2>
+    <a href="/categories/Local" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <% if(typeof hot.local != 'undefined'&& hot.local.length>0) { %>
+      <% hot.local.forEach(function(news, index){ %>
+      <a href="/news/<%= news._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy" width="566" height="208">
+        </div>
+        <div class="pt-1"><%= news.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No newses found.</p>
+    <% } %>
+  </div>
+
+</section>
+<!-- Local News -->
+
+<!-- American News -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>American News</h2>
+    <a href="/categories/America" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(hot.america != '') { %>
+      <% hot.america.forEach(function(news, index){ %>
+      <a href="/news/<%= news._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= news.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No newses found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- American News -->
+
+<!-- China News -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>China News</h2>
+    <a href="/categories/China" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(hot.china != '') { %>
+      <% hot.china.forEach(function(news, index){ %>
+      <a href="/news/<%= news._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= news.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No newses found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- China News -->
+
+<!-- Japan News -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Japan News</h2>
+    <a href="/categories/Japan" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(hot.japan != '') { %>
+      <% hot.japan.forEach(function(news, index){ %>
+      <a href="/news/<%= news._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= news.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No newses found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- Japan News -->
+
+<!-- india News -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>India News</h2>
+    <a href="/categories/India" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(hot.india != '') { %>
+      <% hot.india.forEach(function(news, index){ %>
+      <a href="/news/<%= news._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= news.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No newses found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- india News -->
+
+
+<!-- other News -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Other News</h2>
+    <a href="/categories/Other" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(hot.other != '') { %>
+      <% hot.other.forEach(function(news, index){ %>
+      <a href="/news/<%= news._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= news.image %>" alt="<%= news.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= news.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No newses found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- other News -->
+
+
+<!--Submit start-->
+<section class="px-4 py-5 my-5 text-center">
+    <img src="/img/img.jpg" class="d-block  mx-auto mb-4 img-fluid alt=" Publish your news" width="566" height="208"
+        loading="lazy">
+
+    <h1 class="display-5 fw-bold">Publish your news today</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Publish your news in front of millions of people. </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit-news" class="btn btn-primary btn-dark btn-lg">Submit News</a>
+        </div>
+    </div>
+
+</section>
+
+<!--Submit end-->

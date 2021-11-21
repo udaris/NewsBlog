@@ -1,0 +1,58 @@
+<% if(news !=null ) { %>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        <%- news.name %>
+      </li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <img src="/uploads/<%- news.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- news.name %>"
+        loading="lazy">
+    </div>
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <div class="col-12">
+          <h1>
+            <%- news.name %>
+          </h1>
+        </div>
+        <div class="col-12 mb-4"><i class="bi bi-tag"></i>
+          <%- news.category %>
+        </div>
+        <div class="col-12" style="white-space: pre-line;">
+          <h4>News more about</h4>
+          <%- news.description %>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col-12">
+          <h4>Report Details</h4>
+          <ul class="list-group list-group-flush">
+            <% news.ReportDetails.forEach(function(ReportDetails, index){ %>
+              <li class="list-group-item">
+                <%= ReportDetails %>
+              </li>
+              <% }) %>
+          </ul>
+        </div>
+      </div>
+
+ 
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="/update-news" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update News</a>
+        <a href="/delete-news" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Delete News</a>
+    </div>
+
+      <footer class="py-5">
+        <p> Date of News : <%- news.date %>
+        </p>
+      </footer>
+    </div>
+  </div>
+  <% } else { %>
+    <p>No item found.</p>
+    <% } %>
