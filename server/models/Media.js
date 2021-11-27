@@ -19,7 +19,7 @@ const mediaSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['Thai', 'American', 'Chinese', 'Mexican', 'Indian'],
+        enum: ['Local', 'Sports', 'Weather', 'Global', 'Gossip'],
         required: 'This field is required.'
       },
     image: {

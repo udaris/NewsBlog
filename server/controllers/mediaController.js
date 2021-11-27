@@ -17,7 +17,7 @@ exports.homepage = async(req, res) => {
 
         const news = { latest,local, sports,global,weather,gossip };
 
-        res.render('media-index', { title: 'Social media and News for IN 3400 - Home', mediacategories,news } );
+        res.render('jobs/media-index', { title: 'Social media and News for IN 3400 - Home', mediacategories,news } );
       } catch (error) {
         res.satus(500).send({message: error.message || "Error Occured" });
       }
@@ -30,7 +30,7 @@ exports.exploreMediacategories = async(req, res) => {
     try {
         const limitNumber = 20;
         const mediacategories = await Category.find({}).limit(limitNumber);       
-        res.render('mediacategories', { title: 'Social media and News for IN 3400 - Categories', mediacategories } );
+        res.render('jobs/mediacategories', { title: 'Social media and News for IN 3400 - Categories', mediacategories } );
       } catch (error) {
         res.satus(500).send({message: error.message || "Error Occured" });
       }
@@ -46,7 +46,7 @@ exports.exploreMediacategoriesById = async(req, res) => {
     let categoryId = req.params.id;
     const limitNumber = 20;
     const categoryById = await Media.find({ 'category': categoryId }).limit(limitNumber);
-    res.render('mediacategories', { title: 'Social media and News for IN 3400 - Categoreis', categoryById } );
+    res.render('jobs/mediacategories', { title: 'Social media and News for IN 3400 - Categoreis', categoryById } );
   } catch (error) {
     res.satus(500).send({message: error.message || "Error Occured" });
   }
@@ -61,7 +61,7 @@ exports.exploreMedia = async(req, res) => {
     try {
       let mediaId = req.params.id;
       const media = await Media.findById(mediaId);
-      res.render('media', { title: 'Social media and News for IN 3400 - Media', media } );
+      res.render('jobs/media', { title: 'Social media and News for IN 3400 - Media', media } );
     } catch (error) {
       res.satus(500).send({message: error.message || "Error Occured" });
     }
@@ -90,7 +90,7 @@ exports.exploreLatest = async(req, res) => {
   try {
     const limitNumber = 20;
     const media = await Media.find({}).sort({ _id: -1 }).limit(limitNumber);
-    res.render('mediaexplore-latest', { title: 'Social media and News for IN 3400 - Explore Latest', media } );
+    res.render('jobs/mediaexplore-latest', { title: 'Social media and News for IN 3400 - Explore Latest', media } );
   } catch (error) {
     res.satus(500).send({message: error.message || "Error Occured" });
   }
@@ -107,7 +107,7 @@ exports.exploreRandom = async(req, res) => {
     let count = await Media.find().countDocuments();
     let random = Math.floor(Math.random() * count);
     let media = await Media.findOne().skip(random).exec();
-    res.render('mediaexplore-random', { title: 'Social media and News for IN 3400 - Explore Latest', media } );
+    res.render('jobs/mediaexplore-random', { title: 'Social media and News for IN 3400 - Explore Latest', media } );
   } catch (error) {
     res.satus(500).send({message: error.message || "Error Occured" });
   }
@@ -120,7 +120,7 @@ exports.exploreRandom = async(req, res) => {
 exports.submitMedia = async(req, res) => {
   const infoErrorsObj = req.flash('infoErrors');
   const infoSubmitObj = req.flash('infoSubmit');
-  res.render('submit-media', { title: 'Social media and News for IN 3400 - Submit Media', infoErrorsObj, infoSubmitObj  } );
+  res.render('jobs/submit-media', { title: 'Social media and News for IN 3400 - Submit Media', infoErrorsObj, infoSubmitObj  } );
 }
 
 
@@ -158,11 +158,11 @@ exports.submitMediaOnPost = async(req, res) => {
     await newMedia.save();
 
     req.flash('infoSubmit', 'Media has been added.')
-    res.redirect('/submit-media');
+    res.redirect('jobs//submit-media');
   } catch (error) {
     // res.json(error);
     req.flash('infoErrors', error);
-    res.redirect('/submit-media');
+    res.redirect('jobs//submit-media');
   }
 }
 

@@ -23,4 +23,13 @@ router.get('/update-news', newsController.updateNews);
 
 
 router.get('/media', mediaController.homepage);
+router.get('/mediacategories', mediaController.exploreMediacategories);
+router.get('/media/:id', mediaController.exploreMedia );
+router.get('/mediacategories/:id', mediaController.exploreMediacategoriesById);
+router.get('/mediaexplore-latest', mediaController.exploreLatest);
+router.get('/mediaexplore-random', mediaController.exploreRandom);
+router.get('/submit-media', mediaController.submitMedia);
+router.post('/submit-media', mediaController.submitMediaOnPost);
+
+
 module.exports = router;
