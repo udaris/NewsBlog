@@ -1,53 +1,42 @@
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Update Your feedback</h1>
-    <div class="col-lg-6 mx-auto">
-        <p class="lead">Share your feedback with thousands of web developers accross the world. Fill our form to get
-            started.</p>
-    </div>
+    <h1 class="display-5 fw-bold">Update Question</h1>
 </div>
 
-<% if(feedback != '') { %>
 <div class="row justify-content-center">
 
 
-
-
     <div class="col-8">
-        <form action="/submit-feedback" enctype="multipart/form-data" method="POST">
+
+        <form action="/update-feedbackrecord/<%= updateFeedback._id %>" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="_id"  value="<%= updateFeedback._id %>">
 
             <div class="row g-3">
+                <div class="col-12">
+                    <label for="question" class="form-label">Name</label>
+                    <input disabled type="text" name="question" id="name" class="form-control" value="<%= updateFeedback.name %>" required>
+                </div>
+
 
                 <div class="col-12">
-                    <label for="name" class="form-label">Your Name</label>
-                    <input type="text" name="name" id="name" value=" <%- feedback.name %>" class="form-control" required>
+                    <label for="answer" class="form-label">Description</label>
+                    <textarea type="description" name="description" id="description" class="form-control" cols="30" rows="4"  required><%= updateFeedback.description %></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="image">Screenshot / Image</label>
+                    <input disabled type="file" class="form-control" name="image" accept="image/*">
                 </div>
 
                 <div class="col-12">
-                    <label for="description" class="form-label">Description about feedback</label>
-                    <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
-                </div>
-
-                <div class="col-12">
-                    <button type="button" class="btn btn-outline-primary" id="addIngredientsBtn">+
-                        Details </button>
-                </div>
-
-                <div class="col-12">
-                    <label for="image">Product Image</label>
-                    <input type="file" class="form-control" name="image" accept="image/*">
-                </div>
-
-                <div class="col-12">
-                    <label for="date" class="form-label">Submitted Date</label>
+                    <label for="date" class="form-label">Date</label>
                     <input type="text" name="date" id="date" class="form-control" required>
                 </div>
                 <div class="col-12">
-                    <label for="time" class="form-label">Submitted Time Arround</label>
+                    <label for="time" class="form-label">Time Arround</label>
                     <input type="text" name="time" id="time" class="form-control" required>
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Submit feedback</button>
+                    <button type="submit" class="btn btn-primary">Update Question</button><br/><br/><br/><br/><br/>
                 </div>
 
             </div>
@@ -57,6 +46,4 @@
     </div>
 </div>
 
-<% } else { %>
-    <p>No item found.</p>
-    <% } %>
+</div>

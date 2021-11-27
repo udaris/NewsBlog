@@ -3,6 +3,25 @@ const FeedBack = require('../models/FeedBack');
 // const News = require('../models/News');
 
 
+
+/**
+ * GET /feedback
+ * feedBack
+ */
+
+exports.exploreFeedBack = async (req, res) => {
+    try {
+        const limitNumber = 20;
+        const feedback = await FeedBack.find({}).limit(limitNumber);
+        res.render('FeedBack/feedback', { title: 'News Blog - FeedBack', feedback });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occurred" });
+    }
+
+}
+
+
+
 /**
  * GET /submit-feedback
  * Submit feedback
@@ -61,3 +80,54 @@ exports.submitFeedBackOnPost = async (req, res) => {
 
 }
 
+/**
+ * GET /deleteFeedBack/:id
+ * FeedBack
+ */
+
+exports.deleteFeedBack = async (req, res) => {
+    try{
+        let feedbackId = req.params.id;
+        await FeedBack.findByIdAndDelete(feedbackId);
+        res.redirect('/FeedBack/feedback');
+    }catch (error) {
+        res.status(500).send({ message: error.message || "Error Occurred" });
+    }
+}
+
+/**
+ * POST /updateQuestion/:id
+ * update-Question
+ */
+exports.updateFeedBackRecord = async (req, res) => {
+    try{
+        let feedbackId = req.params.id;
+        const {name,description,image,date,time}=req.body;
+        const updatingFeedBack = {
+            name,
+            description,
+            image,
+            date,
+            time
+        }
+        await FeedBack.findByIdAndUpdate(feedbackId,updatingFeedBack);
+        res.redirect('/FeedBack/feedback');
+    }catch (error) {
+        res.status(500).send({ message: error.message || "Error Occurred" });
+    }
+}
+
+/**
+ * GET /update-feedback
+ * Update feedback
+ */
+exports.updateFeedBack = async (req, res) => {
+    try {
+        let feedbackId = req.params.id;
+        const updateFeedback = await FeedBack.findById(feedbackId);
+        res.render('FeedBack/update-feedback', { title: 'News Blog - FeedBack', updateFeedback });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occurred" });
+    }
+
+}
