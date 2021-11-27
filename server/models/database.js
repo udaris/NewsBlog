@@ -12,3 +12,4 @@ db.once('open', function(){
 require('./Category');
 require('./News');
 require('./Question');
+require('./FeedBack');
