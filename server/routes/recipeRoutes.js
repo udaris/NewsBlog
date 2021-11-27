@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const newsController = require('../controllers/newsController');
+
+
+
+const mediaController = require('../controllers/mediaController');
 /**
  * App routes
  */
@@ -17,4 +21,6 @@ router.post('/submit-news', newsController.submitNewsOnPost);
 
 router.get('/update-news', newsController.updateNews);
 
+
+router.get('/media', mediaController.homepage);
 module.exports = router;

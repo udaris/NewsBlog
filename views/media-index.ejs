@@ -1,0 +1,217 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+      <img src="/img/media head.jpg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="media With UOM">
+    </div>
+  
+    <div class="col-12 col-lg-6">
+      <h1 class="display-5 fw-bold mb-3">Media Colletion and Job vacancies</h1>
+      <p class="lead">
+        Explore our huge selection of news and social media content including; every details, trustable sources and easliy accessible, immediaye breaking news details, quick uploads, local and social media.
+      </p>
+  
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="/mediaexplore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Newest</a>
+        <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Day to Day Media</a>
+      </div>
+  
+    </div>
+  
+  </div>
+
+<!-- mediacategories Start -->
+
+  <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    <% if(mediacategories != '') { %>
+      <% mediacategories.forEach(function(category, index) { %>
+        <a href="/mediacategories/<%- category.name %>" class="col text-center category__link">
+          <div class="category__img shadow">
+            <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%- category.name %></div>
+        </a>
+      <% }) %>
+    <% } %>
+
+        
+
+        <a href="/mediacategories" class="col text-center category__link">
+          <div class="category__img shadow">
+            <img src="img/view-all.jpg" alt="View All categories" loading="lazy">
+          </div>
+          <div class="pt-1">View All</div>
+        </a>
+
+  </div>
+
+  <!-- Categories End -->
+
+  <!-- Latest Start -->
+
+  <section class="pb-4 pt-4">
+
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Latest Details</h2>
+      <a href="/mediaexplore-latest" class="ms-auto">View More</a>
+    </div>  
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+      <% if(news != '') { %>
+        <% news.latest.forEach(function(media, index){ %>
+        <a href="/media/<%= media._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= media.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+
+
+  </section>
+
+  <!-- Lateset End -->
+
+  <!-- local Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Local</h2>
+      <a href="/mediacategories/local" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof news.local !== 'undefined' && news.local.length > 0) { %>
+        <% news.local.forEach(function(media, index){ %>
+        <a href="/media/<%= media._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= media.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- local End -->
+
+
+  <!-- Sports-->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Sports</h2>
+    <a href="/mediacategories/sports" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(typeof news.sports !== 'undefined' && news.sports.length > 0) { %>
+      <% news.sports.forEach(function(media, index){ %>
+      <a href="/media/<%= media._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= media.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- Sports End -->
+
+<!-- Global start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Global </h2>
+    <a href="/mediacategories/global" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(news.global != '') { %>
+      <% news.global.forEach(function(media, index){ %>
+      <a href="/media/<%= media._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= media.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- global End -->
+
+
+<!-- Weather  -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Weather</h2>
+    <a href="/mediacategories/weather" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(news.weather != '') { %>
+      <% news.weather.forEach(function(media, index){ %>
+      <a href="/media/<%= media._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= media.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- weather End -->
+
+
+<!-- Gossip  -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Gossip</h2>
+    <a href="/mediacategories/gossip" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(news.gossip != '') { %>
+      <% news.gossip.forEach(function(media, index){ %>
+      <a href="/media/<%= media._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= media.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- gossip End -->
+
+
+  <!-- Submit Start -->
+
+  <section class="px-4 py-5 my-5 text-center">
+    <img src="/img/publish-media.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your media for FREE today" width="566" height="208" loading="lazy">
+    <h1 class="display-5 fw-bold">Publish yours FREE</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Publish your Images in front of thousands of people today.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/submit-media" class="btn btn-primary btn-dark btn-lg">Submit Here</a>
+      </div>
+    </div>
+  </section>
+   
+
+  <!-- Submit end -->
