@@ -1,0 +1,51 @@
+<h1 class="pb-4">Search Results</h1>
+
+<div>
+  <% if(searchFeedback != '') { %>
+    <% searchFeedback.forEach(function(searchFeedback, index){ %>
+                    <div class="row" style="margin-bottom: 30px">
+                        <div class="col-12 col-md-4">
+                            <img src="/uploads/<%- searchFeedback.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- searchFeedback.name %>"
+                                 loading="lazy">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1>
+                                        <%- searchFeedback.name %>
+                                    </h1>
+                                </div>
+
+                                <div class="col-12" style="white-space: pre-line;">
+                                    <h4>More about FeedBack</h4>
+                                    <%- searchFeedback.description %>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start" style="margin-top: 20px">
+                                <!--        <a href="/FeedBack/update-feedback" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update feedback</a>-->
+                                <!--        <a href="/delete-feedback" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Delete feedback</a>-->
+                                <a href="/FeedBack/update-feedback/<%- searchFeedback._id %>"  class="btn btn-primary btn-dark btn-lg">Update FeedBack</a>
+                                <a href="/FeedBack/delete-feedback/<%- searchFeedback._id %>" onclick="return confirm('Are you sure to delete this record?');"  class="btn btn-primary btn-danger btn-lg">Delete FeedBack</a>
+
+                            </div>
+
+                            <footer class="py-5">
+                                <p> Date of Submitted : <%- searchFeedback.date %>
+                                </p>
+                                <p> Time of Submitted : <%- searchFeedback.time %>
+                                </p>
+                            </footer>
+                        </div>
+                    </div>
+<!--    <a href="/news/<%= searchFeedback._id %>" class="col text-center category__link">-->
+<!--      <div class="category__img category__img&#45;&#45;large shadow">-->
+<!--        <img src="/uploads/<%= searchFeedback.image %>" alt="<%= searchFeedback.name %>" loading="lazy">-->
+<!--      </div>-->
+<!--      <div class="pt-1"><%= searchFeedback.name %></div>-->
+<!--    </a>-->
+    <% }) %>
+  <% } else { %>
+    <p>No items found.</p>
+  <% } %>
+</div>

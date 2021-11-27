@@ -1,0 +1,51 @@
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Submit Question</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead">Share your valuable knowledge with thousands of web developers accross the world. Fill our form to get started.</p>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+  
+
+  
+    <% if(infoErrorsObj != '') { %>
+      <div class="col-8 alert alert-danger" role="alert">
+        <%= infoErrorsObj[0].message %>
+      </div>
+    <% } %>
+  
+    <div class="col-8">
+  
+      <form action="/submit-question" enctype="multipart/form-data" method="POST">
+      
+        <div class="row g-3">
+
+          <div class="col-12">
+                <label for="username" class="form-label">User name</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+          </div>
+  
+          <div class="col-12">
+            <label for="question" class="form-label">Question</label>
+            <input type="text" name="question" id="question" class="form-control" required>
+          </div>
+  
+          <div class="col-12">
+            <label for="answer" class="form-label">Answer</label>
+            <textarea type="description" name="answer" id="answer" class="form-control" cols="30" rows="4" required></textarea>
+          </div>
+
+          
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit Question</button><br/><br/><br/><br/><br/>
+          </div>
+  
+        </div>
+      
+      </form>
+  
+    </div>
+  </div>
+
+</div>
