@@ -158,11 +158,11 @@ exports.submitMediaOnPost = async(req, res) => {
     await newMedia.save();
 
     req.flash('infoSubmit', 'Media has been added.')
-    res.redirect('jobs//submit-media');
+    res.redirect('/submit-media');
   } catch (error) {
     // res.json(error);
     req.flash('infoErrors', error);
-    res.redirect('jobs//submit-media');
+    res.redirect('/submit-media');
   }
 }
 
