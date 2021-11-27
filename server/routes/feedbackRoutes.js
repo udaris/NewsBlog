@@ -13,6 +13,6 @@ router.get('/FeedBack/submit-feedback', feedBackController.submitFeedBack);
 router.post('/FeedBack/submit-feedback', feedBackController.submitFeedBackOnPost);
 router.get('/FeedBack/update-feedback/:id', feedBackController.updateFeedBack);
 router.post('/update-feedbackrecord/:id', feedBackController.updateFeedBackRecord);
-// router.get('/update-news', feedBackController.updateNews);
+router.post('/FeedBack/searchFeedBack', feedBackController.searchFeedBack);
 
 module.exports = router; //export router

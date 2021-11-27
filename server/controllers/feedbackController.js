@@ -131,3 +131,18 @@ exports.updateFeedBack = async (req, res) => {
     }
 
 }
+
+/**
+ * POST /search
+ * Search
+ */
+exports.searchFeedBack = async (req, res) => {
+    try {
+        let searchTerm = req.body.searchTerm;
+        let searchFeedback = await FeedBack.find({ $text: { $search: searchTerm, $diacriticSensitive: true } });
+        res.render('FeedBack/searchFeedBack', { title: 'News Blog - Search', searchFeedback });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occurred" });
+    }
+
+}

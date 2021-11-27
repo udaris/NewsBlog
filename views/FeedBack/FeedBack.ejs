@@ -1,18 +1,23 @@
-<% if(feedback !=null ) { %>
-  <% feedback.forEach(function(feedback, index) { %>
+
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li>
-          <a href="/FeedBack/update-feedback" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update feedback</a>
-<!--          <a href="/FeedBack/delete-feedback" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Delete feedback</a>-->
-        </li>
       <li class="breadcrumb-item active" aria-current="page">
         <%- feedback.name %>
       </li>
     </ol>
   </nav>
-  <div class="row">
+  <div style="margin-bottom: 30px">
+      <a href="/FeedBack/submit-feedback" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Submit Your FeedBack</a>
+  </div>
+  <div class="col-md-3 text-end" style="margin-bottom: 35px">
+    <form method="POST" action="/FeedBack/searchFeedBack">
+      <input type="search" name="searchTerm" class="form-control" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
+  <% if(feedback !=null ) { %>
+      <% feedback.forEach(function(feedback, index) { %>
+  <div class="row" style="margin-bottom: 30px">
     <div class="col-12 col-md-4">
       <img src="/uploads/<%- feedback.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- feedback.name %>"
         loading="lazy">
@@ -26,19 +31,24 @@
         </div>
 
         <div class="col-12" style="white-space: pre-line;">
-          <h4>feedback more about</h4>
+          <h4>More about FeedBack</h4>
           <%- feedback.description %>
         </div>
       </div>
 
-      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a href="/FeedBack/update-feedback" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update feedback</a>
-        <a href="/FeedBack/delete-feedback" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Delete feedback</a>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start" style="margin-top: 20px">
+<!--        <a href="/FeedBack/update-feedback" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update feedback</a>-->
+<!--        <a href="/delete-feedback" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Delete feedback</a>-->
+          <a href="/FeedBack/update-feedback/<%- feedback._id %>"  class="btn btn-primary btn-dark btn-lg">Update FeedBack</a>
+          <a href="/FeedBack/delete-feedback/<%- feedback._id %>" onclick="return confirm('Are you sure to delete this record?');"  class="btn btn-primary btn-danger btn-lg">Delete FeedBack</a>
+
     </div>
 
       <footer class="py-5">
-        <p> Date of feedback : <%- feedback.date %>
+        <p> Date of Submitted : <%- feedback.date %>
         </p>
+          <p> Time of Submitted : <%- feedback.time %>
+          </p>
       </footer>
     </div>
   </div>
