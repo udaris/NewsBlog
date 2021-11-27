@@ -36,13 +36,13 @@
           </div>
           
           <div class="col-12">
-            <label for="description" class="form-label">Description</label>
-            <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+            <label for="description" class="form-label">Job Description</label>
+            <textarea name="description" id="description" class="form-control" cols="30" rows="4" placeholder="job over view / salary details / remote job or not" ></textarea>
           </div>
   
           <div class="col-12">
-            <label for="name" class="form-label">Specail notices relate to this image</label><br>
-            <small>Example: Source you found this, Prohibite level</small>
+            <label for="name" class="form-label">Job Requirments</label><br>
+            <small>add requiments one by one</small>
             <div class="ingredientList">
               <div class="ingredeintDiv mb-1">
                 <input type="text" name="ingredients" class="form-control">
@@ -57,17 +57,18 @@
           <div class="col-12">
             <label for="category">Select Category</label>
             <select class="form-select form-control" name="category" aria-label="Category">
-              <option selected>Select Category</option>
-              <option value="Local">Local</option>
-              <option value="Sports">Sports</option>
-              <option value="Weather">Weather</option>
-              <option value="Global">Global</option>
-              <option value="Gossip">Gossip</option>
+              <option selected>Select Job Category</option>
+              <!-- all these job values added before to decide this path on job fileds -->
+              <option value="Local">Software Engineering </option>
+              <option value="Sports">Finance and Marketing</option>
+              <option value="Weather">Medical </option>
+              <option value="Global">Agriculture</option>
+              <option value="Gossip">Education</option>
             </select>
           </div>
   
           <div class="col-12">
-            <label for="image">Image</label>
+            <label for="image">Image Realted to Company or Job Preferances</label>
             <input type="file" class="form-control" name="image" accept="image/*">
           </div>
   
