@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="rotes changes by surangi">
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="newsrotes changes by surangi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/newsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/newsRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/questionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/questionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="features/Questions" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -89,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638096554636</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="newsrotes changes by surangi">
+      <created>1638096922342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638096922342</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +126,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="surangi branch" />
     <MESSAGE value="rotes changes by surangi" />
-    <option name="LAST_COMMIT_MESSAGE" value="rotes changes by surangi" />
+    <MESSAGE value="newsrotes changes by surangi" />
+    <option name="LAST_COMMIT_MESSAGE" value="newsrotes changes by surangi" />
   </component>
 </project>
