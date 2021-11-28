@@ -16,12 +16,17 @@
 
     <div class="col-12 col-md-8">
       <div class="row">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start" style="margin-top: 20px">
+          <a href="/jobs/update-media/<%- media._id %>"  class="btn btn-primary btn-warning btn-sm">Update Details</a>
+          <a href="/jobs/delete-media/<%- media._id %>" onclick="return confirm('Are you sure to remove this record? This can be undone');"  class="btn btn-primary btn-danger btn-sm">Remove Job</a>
+        </div>
+        &emsp;<br>&emsp;
         <div class="col-12"><h1><%- media.name %></h1></div>
         <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- media.category %></div>
         <div class="col-12" style="white-space: pre-line;">
           <h4>Job Description</h4>
           <%- media.description %>
-        </div>
+        </div>        
       </div>
 
       <div class="row pt-4">
@@ -34,8 +39,19 @@
           </ul> 
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-12" style="white-space: pre-line;">
+          <h5>Contact - </h5>
+          <%- media.email %>          
+        </div>
+      </div>
+    </div>
+
     </div>
   </div>
 <% } else { %>
   <p>No item found.</p>
 <% } %>
+
+      

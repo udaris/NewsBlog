@@ -19,7 +19,7 @@ exports.homepage = async(req, res) => {
 
         res.render('jobs/media-index', { title: 'Social media and News for IN 3400 - Home', mediacategories,news } );
       } catch (error) {
-        res.satus(500).send({message: error.message || "Error Occured" });
+        res.status(500).send({message: error.message || "Error Occured" });
       }
 }
 
@@ -32,7 +32,7 @@ exports.exploreMediacategories = async(req, res) => {
         const mediacategories = await Category.find({}).limit(limitNumber);       
         res.render('jobs/mediacategories', { title: 'Social media and News for IN 3400 - Categories', mediacategories } );
       } catch (error) {
-        res.satus(500).send({message: error.message || "Error Occured" });
+        res.status(500).send({message: error.message || "Error Occured" });
       }
 }
 
@@ -48,7 +48,7 @@ exports.exploreMediacategoriesById = async(req, res) => {
     const categoryById = await Media.find({ 'category': categoryId }).limit(limitNumber);
     res.render('jobs/mediacategories', { title: 'Social media and News for IN 3400 - Categoreis', categoryById } );
   } catch (error) {
-    res.satus(500).send({message: error.message || "Error Occured" });
+    res.status(500).send({message: error.message || "Error Occured" });
   }
 } 
 
@@ -63,7 +63,7 @@ exports.exploreMedia = async(req, res) => {
       const media = await Media.findById(mediaId);
       res.render('jobs/media', { title: 'Social media and News for IN 3400 - Media', media } );
     } catch (error) {
-      res.satus(500).send({message: error.message || "Error Occured" });
+      res.status(500).send({message: error.message || "Error Occured" });
     }
   } 
 
@@ -77,7 +77,7 @@ exports.exploreMedia = async(req, res) => {
      let media = await Media.find( { $text: { $search: searchTerm, $diacriticSensitive: true } });
      res.render('search', { title: 'Social media and News for IN 3400 - Search', media } );
    } catch (error) {
-     res.satus(500).send({message: error.message || "Error Occured" });
+     res.status(500).send({message: error.message || "Error Occured" });
    }
    
  }
@@ -92,7 +92,7 @@ exports.exploreLatest = async(req, res) => {
     const media = await Media.find({}).sort({ _id: -1 }).limit(limitNumber);
     res.render('jobs/mediaexplore-latest', { title: 'Social media and News for IN 3400 - Explore Latest', media } );
   } catch (error) {
-    res.satus(500).send({message: error.message || "Error Occured" });
+    res.status(500).send({message: error.message || "Error Occured" });
   }
 } 
 
@@ -109,7 +109,7 @@ exports.exploreRandom = async(req, res) => {
     let media = await Media.findOne().skip(random).exec();
     res.render('jobs/mediaexplore-random', { title: 'Social media and News for IN 3400 - Explore Latest', media } );
   } catch (error) {
-    res.satus(500).send({message: error.message || "Error Occured" });
+    res.status(500).send({message: error.message || "Error Occured" });
   }
 } 
 
@@ -167,6 +167,54 @@ exports.submitMediaOnPost = async(req, res) => {
 }
 
 
+/**
+ * GET /deletejobs media/:id
+ * 
+ */
+
+exports.deleteMedia = async (req, res) => {
+  try{
+      let mediaId = req.params.id;
+      await Media.findByIdAndDelete(mediaId);
+      res.redirect('/media-index');
+  }catch (error) {
+      res.status(500).send({ message: error.message || "Error Occurred" });
+  }
+}
+
+/**
+* POST /updatejobsmedia/:id
+* 
+*/
+exports.updateMediaRecord = async (req, res) => {
+  try{
+      let mediaId = req.params.id;
+      const {description,jobrq,image}=req.body;
+      const updatingMedia= {          
+          description,
+          jobrq,
+          image
+      }
+      await Media.findByIdAndUpdate(mediaId,updatingMedia);
+      res.redirect('/media-index');
+  }catch (error) {
+      res.status(500).send({ message: error.message || "Error Occurred" });
+  }
+}
+
+/**
+* GET /update-media jobs
+*/
+exports.updateMedia = async (req, res) => {
+  try {
+      let mediaId = req.params.id;
+      const updateMedia = await Media.findById(mediaId);
+      res.render('jobs/update-media', { title: 'News Blog - careers', updateMedia });
+  } catch (error) {
+      res.status(500).send({ message: error.message || "Error Occurred" });
+  }
+
+}
 
 
 // async function insertDymmyCategoryData(){
