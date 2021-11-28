@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="app.js changes by surangi">
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="mare changes by surangi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/mediaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/mediaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/newsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/newsRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/jobs/media.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/jobs/media.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/main.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jobs/media-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/jobs/media-index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638097590069</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="mare changes by surangi">
+      <created>1638099350092</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1638099350092</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +149,7 @@
     <MESSAGE value="newsrotes changes by surangi" />
     <MESSAGE value="Question views by surangi" />
     <MESSAGE value="app.js changes by surangi" />
-    <option name="LAST_COMMIT_MESSAGE" value="app.js changes by surangi" />
+    <MESSAGE value="mare changes by surangi" />
+    <option name="LAST_COMMIT_MESSAGE" value="mare changes by surangi" />
   </component>
 </project>
