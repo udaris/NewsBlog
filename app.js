@@ -32,7 +32,7 @@ app.use(bodyparser.json);*/
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
-const routes = require('./server/routes/recipeRoutes.js');
+const routes = require('./server/routes/newsRoutes.js')
 const feedbackRoutes = require('./server/routes/feedbackRoutes.js');
 app.use('/', routes);
 app.use('/', feedbackRoutes);
