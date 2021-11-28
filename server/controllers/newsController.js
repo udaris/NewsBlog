@@ -24,7 +24,7 @@ exports.homepage = async (req, res) => {
 
         res.render('index', { title: 'News Blog - Home', categories, hot });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 
 }
@@ -42,7 +42,7 @@ exports.exploreCategories = async (req, res) => {
         const categories = await Category.find({}).limit(limitNumber);
         res.render('categories', { title: 'News Blog - Categories', categories });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 
 }
@@ -59,11 +59,11 @@ exports.exploreCategories = async (req, res) => {
 exports.exploreCategoriesbyId = async (req, res) => {
     try {
         let cateId = req.params.id;
-        const limitNumber = 20;
-        const cateById = await News.find({ 'category': cateId }).limit(limitNumber);
+        const limitNumb = 20;
+        await News.find({ 'category': cateId }).limit(limitNumb);
         res.render('categories', { title: 'News Blog - Categories', categories });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 
 }
@@ -82,7 +82,7 @@ exports.exploreNews = async (req, res) => {
         const news = await News.findById(newsId);
         res.render('news', { title: 'News Blog - News', news });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 
 }
@@ -98,7 +98,7 @@ exports.searchNews = async (req, res) => {
         let news = await News.find({ $text: { $search: searchTerm, $diacriticSensitive: true } });
         res.render('search', { title: 'News Blog - Search', news });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 
 }
@@ -114,7 +114,7 @@ exports.exploreLatest = async (req, res) => {
         const news = await News.find({}).sort({ _id: -1 }).limit(limitNumber);
         res.render('explore-latest', { title: 'News Blog - Explore Latest', news });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
 
@@ -130,7 +130,7 @@ exports.exploreRandom = async (req, res) => {
         let news = await News.findOne().skip(random).exec();
         res.render('explore-random', { title: 'News Blog - Explore Random', news });
     } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
 
@@ -172,7 +172,7 @@ exports.submitNewsOnPost = async (req, res) => {
       uploadPath = require('path').resolve('./') + '/public/uploads/' + newImageName;
 
       imageUploadFile.mv(uploadPath, function(err){
-        if(err) return res.satus(500).send(err);
+        if(err) return res.status(500).send(err);
       })
 
     }
@@ -202,157 +202,75 @@ exports.submitNewsOnPost = async (req, res) => {
  }
 
  
+ 
 
 /**
- * GET /update-news
- * Update News
-*/
-// exports.updateNews = async (req, res) => {
-
-//     try {
-//         let newsId = req.params.id;
-//         const news = await News.findById(newsId);
-       
-//         res.render('update-news', { title: 'News Blog - update-news', news });
-//     } catch (error) {
-//         res.render('update-news', { title: 'News Blog - Submit News' });
-//        // res.satus(500).send({ message: error.message || "Error Occured" });
-//     }
-//     //const infoErrorsObj = req.flash('infoErrors');
-//     //const infoSubmitObj = req.flash('infoSubmit');
-
-// }
-exports.updateNews = async (req, res) => {
-    try {
-        let newsId = req.params.id;
-        const news = await News.findById(newsId);
-        res.render('news', { title: 'News Blog - News', news });
-    } catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+ * GET /updateNews/:id
+ * update-news
+ */
+ exports.updateNews = async (req, res) => {
+    try{
+       let newsId = req.params.id;
+       const getNewsdetails = await News.findById(newsId);
+       const infoErrorsObj = req.flash('infoErrors');
+       const infoSubmitObj = req.flash('infoSubmit');
+       res.render('update-news', { title: 'News Blog - Update News', getNewsdetails ,infoErrorsObj,infoSubmitObj });
+    }catch (error) {
+            res.status(500).send({ message: error.message || "Error Occured" });
     }
-
 }
 
 
-//Delete Recipe
-// async function deleteRecipe(){
-//   try {
-//     await News.deleteOne({ name: 'Reduncy of Gas in the country' });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// deleteRecipe();
+/**
+ * POST /updateNews/:id
+ * update-News
+ */
+exports.updateNewsDetails = async (req, res) => {
+    try{
+       let newsId = req.params.id;
+       const {name,description,email, ReportDetails, category, date, time}=req.body;
+       const updateNewsNOw = {
+           name,
+           description,
+           email,
+           ReportDetails,
+           category,
+           date,
+           time,
+       }
+       await News.findByIdAndUpdate(newsId,updateNewsNOw);
+      
 
+        req.flash('infoSubmit', 'News has been updated.');
+        
 
-//Update Recipe
-// async function updateRecipe(){
-//   try {
-//     const res = await News.updateOne({ name: 'New Recipe Updated' }, { name: 'Reduncy of Gas in the country' });
-//     res.n; // Number of documents matched
-//     res.nModified; // Number of documents modified
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// updateRecipe();
-
-
-
-
-
-
-
-
-
-
-
- // name:'Reduncy of Gas in the country',
-            // description:'In theseday, everywhere in the courty people have to face gas reduncy in the market.',
-            // email:'udari@gmail.com',
-            // ReportDetails:'2021/11/17',
-            // category:'America',
-            // image:'im.jpg',
-            // date:'2021/11/17',
-            // time:'11.00am'
+       res.redirect('/');
+       
+    }catch (error) {
+           res.status(500).send({ message: error.message || "Error Occured" });
+          
+    }
+}
 
 
 
-// async function insertDymmyCategoryData() {
-//     try {
-//         await Category.insertMany([
-//             {
-//                         "name": "Thai",
-//                         "image": "thai-food.jpg"
-//                       },
-//                       {
-//                         "name": "American",
-//                         "image": "american-food.jpg"
-//                       }, 
-//                       {
-//                         "name": "Chinese",
-//                         "image": "chinese-food.jpg"
-//                       },
-//                       {
-//                         "name": "Mexican",
-//                         "image": "mexican-food.jpg"
-//                       }, 
-//                       {
-//                         "name": "Indian",
-//                         "image": "indian-food.jpg"
-//                       },
-//                       {
-//                         "name": "Spanish",
-//                         "image": "spanish-food.jpg"
-//                       }
-//         ]);
-
-//     } catch (error) {
-//         console.log('err' + error)
-//     }
-// }
-
-// insertDymmyCategoryData();
 
 
-// async function insertNewsData() {
-//     try {
-//         await News.insertMany([
-//             {
-//                 "name": "Flood risk in Ratnapura district",
-//                 "description": `Flood risk in Ratnapura district is raising with huge  volumes of rains. People are in troubles many to face a lot of problems.`,
-//                 "email": "unews@u.co.uk",
-//                 "ReportDetails": [
-//                     "Date : 2021/11/11",
-//                     "Time : 10.00am",
-//                     "Report: Mis. udari",
-//                 ],
-//                 "category": "Local",
-//                 "image": "flood.jpg",
-//                 "date":"2021/11/11",
-//                 "time":"10.00am"
-//             },
-//             {
-//                 "name": "Flood risk in Godawaya district",
-//                 "description": `Flood risk in Godawaya district is raising with huge  volumes of rains. People are in troubles many to face a lot of problems.`,
-//                 "email": "unews@u.co.uk",
-//                 "ReportDetails": [
-//                     "Date : 2021/11/11",
-//                     "Time : 10.00am",
-//                     "Report: Mis. udari",
-//                 ],
-//                 "category": "Local",
-//                 "image": "fl2.jpg",
-//                 "date":"2021/11/11",
-//                 "time":"10.00am"
-//             },
+/**
+ * GET /deleteQuestion/:id
+ * Question
+ */
 
-//         ]);
+ exports.deleteNews = async (req, res) => {
+    try{
+        let newsId = req.params.id;
+        await News.findByIdAndDelete(newsId);
+        res.redirect('/');
+    }catch (error) {
+        res.status(500).send({ message: error.message || "Error Occured" });
+    }
+}
 
-//     } catch (error) {
-//         console.log('err' + error)
-//     }
-// }
 
-// insertNewsData();
+
 

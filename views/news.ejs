@@ -43,10 +43,10 @@
  
 
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a href="/update-news" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update News</a>
-        <a href="/delete-news" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Delete News</a>
+        <a href="/update-news/<%- news._id %>" style="color: #004D40; background-color: #1DE9B6;" class="btn btn-primary btn-dark btn-lg px-4 me-md-2" >Update News</a>
+        <a href="/delete-news/<%- news._id %>" style=" color:#DD2C00; background-color: antiquewhite;"  class="btn btn-outline-secondary btn-lg px-4 me-md-2" onclick="return confirm('Are you sure to delete this record?');"  >Delete News</a>
     </div>
-
+    
       <footer class="py-5">
         <p> Date of News : <%- news.date %>
         </p>

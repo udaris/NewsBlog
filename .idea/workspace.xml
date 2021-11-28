@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch" />
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/newsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/newsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/recipeRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/news.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/news.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/submit-news.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/submit-news.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/update-news.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/update-news.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +49,7 @@
       <updated>1637597456968</updated>
       <workItem from="1637597459622" duration="1060000" />
       <workItem from="1637598543741" duration="627000" />
+      <workItem from="1638086168759" duration="476000" />
     </task>
     <task id="LOCAL-00001" summary="surangi branch">
       <created>1637598323523</created>
@@ -67,6 +78,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="surangi branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="surangi branch" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
