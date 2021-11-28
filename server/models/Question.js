@@ -16,6 +16,11 @@ const questionSchema = new mongoose.Schema({
         type :String,
         required:'This is required.'
     },
+
+    field:{
+        type :String,
+        required:'This is required.'
+    }
 });
 
 module.exports = mongoose.model('Question',questionSchema);  //Question is the collection

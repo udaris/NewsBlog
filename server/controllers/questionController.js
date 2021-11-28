@@ -27,7 +27,7 @@ exports.submitQuestion = async (req, res) => {
     try{
         const infoErrorsObj = req.flash('infoErrors');
         const infoSubmitObj = req.flash('infoSubmit');
-        res.render('Question/submit-question', { title: 'News Blog - Submit News',infoErrorsObj,infoSubmitObj });
+        res.render('Question/submit-question', { title: 'News Blog - Submit Question',infoErrorsObj,infoSubmitObj });
     }catch (error) {
             res.satus(500).send({ message: error.message || "Error Occured" });
     }
@@ -42,7 +42,8 @@ exports.submitQuestionOnPost = async (req, res) => {
         const newQuestion =new Question({
             question:req.body.question,
             answer:req.body.answer,
-            username:req.body.username
+            username:req.body.username,
+            field:req.body.field
         });
         await newQuestion.save();
         req.flash('infoSubmit','Question has been already added');
@@ -65,7 +66,7 @@ exports.updateQuestion = async (req, res) => {
     try{
        let questionId = req.params.id;
        const getdetails = await Question.findById(questionId);
-       res.render('Question/update-question', { title: 'News Blog - Submit News',getdetails });
+       res.render('Question/update-question', { title: 'News Blog - Update-Question',getdetails });
     }catch (error) {
             res.satus(500).send({ message: error.message || "Error Occured" });
     }
@@ -79,10 +80,11 @@ exports.updateQuestion = async (req, res) => {
 exports.updateQuestionRecord = async (req, res) => {
     try{
        let questionId = req.params.id;
-       const {question,answer}=req.body;
+       const {question,answer,field}=req.body;
        const updatingQuestion = {
            question,
-           answer
+           answer,
+           field
        }
        const update = await Question.findByIdAndUpdate(questionId,updatingQuestion);
        res.redirect('/Question/question');
@@ -90,15 +92,6 @@ exports.updateQuestionRecord = async (req, res) => {
             res.satus(500).send({ message: error.message || "Error Occured" });
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 

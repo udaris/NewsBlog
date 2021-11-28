@@ -9,6 +9,11 @@
   
       <form action="/update-questionrecord/<%= getdetails._id %>" enctype="multipart/form-data" method="POST">
           <input type="hidden" name="_id"  value="<%= getdetails._id %>">
+
+          <div class="col-12">
+            <label for="field" class="form-label">Field</label>
+            <input type="text" name="field" id="field" class="form-control" value="<%= getdetails.field %>" required>
+          </div>
       
         <div class="row g-3">
           <div class="col-12">
