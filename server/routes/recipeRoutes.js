@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const newsController = require('../controllers/newsController');
-
+const questionController = require('../controllers/questionController');
 
 
 const mediaController = require('../controllers/mediaController');
@@ -30,6 +30,13 @@ router.get('/mediaexplore-latest', mediaController.exploreLatest);
 router.get('/mediaexplore-random', mediaController.exploreRandom);
 router.get('/submit-media', mediaController.submitMedia);
 router.post('/submit-media', mediaController.submitMediaOnPost);
+
+router.get('/question',questionController.question);
+router.get('/submit-question', questionController.submitQuestion);
+router.post('/submit-question', questionController.submitQuestionOnPost);
+router.get('/update-question/:id', questionController.updateQuestion);
+router.get('/delete-question/:id', questionController.deleteQuestion);
+router.post('/update-questionrecord/:id', questionController.updateQuestionRecord);
 
 
 module.exports = router;
