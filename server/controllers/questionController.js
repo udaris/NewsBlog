@@ -12,7 +12,7 @@ exports.question = async (req, res) => {
         const questions = await Question.find({});
         res.render('Question/question', { title: 'Social Network - Question',questions });
     }catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
 
@@ -29,7 +29,7 @@ exports.submitQuestion = async (req, res) => {
         const infoSubmitObj = req.flash('infoSubmit');
         res.render('Question/submit-question', { title: 'News Blog - Submit Question',infoErrorsObj,infoSubmitObj });
     }catch (error) {
-            res.satus(500).send({ message: error.message || "Error Occured" });
+            res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
 
@@ -68,7 +68,7 @@ exports.updateQuestion = async (req, res) => {
        const getdetails = await Question.findById(questionId);
        res.render('Question/update-question', { title: 'News Blog - Update-Question',getdetails });
     }catch (error) {
-            res.satus(500).send({ message: error.message || "Error Occured" });
+            res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
 
@@ -89,7 +89,7 @@ exports.updateQuestionRecord = async (req, res) => {
        const update = await Question.findByIdAndUpdate(questionId,updatingQuestion);
        res.redirect('/Question/question');
     }catch (error) {
-            res.satus(500).send({ message: error.message || "Error Occured" });
+            res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
 
@@ -106,6 +106,6 @@ exports.deleteQuestion = async (req, res) => {
         await Question.findByIdAndDelete(questionId);
         res.redirect('/Question/question');
     }catch (error) {
-        res.satus(500).send({ message: error.message || "Error Occured" });
+        res.status(500).send({ message: error.message || "Error Occured" });
     }
 }
