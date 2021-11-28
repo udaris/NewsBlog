@@ -10,7 +10,7 @@ const Question = require('../models/Question');
 exports.question = async (req, res) => {
     try{
         const questions = await Question.find({});
-        res.render('question', { title: 'Social Network - Question',questions });
+        res.render('Question/question', { title: 'Social Network - Question',questions });
     }catch (error) {
         res.satus(500).send({ message: error.message || "Error Occured" });
     }
@@ -27,7 +27,7 @@ exports.submitQuestion = async (req, res) => {
     try{
         const infoErrorsObj = req.flash('infoErrors');
         const infoSubmitObj = req.flash('infoSubmit');
-        res.render('submit-question', { title: 'News Blog - Submit News',infoErrorsObj,infoSubmitObj });
+        res.render('Question/submit-question', { title: 'News Blog - Submit News',infoErrorsObj,infoSubmitObj });
     }catch (error) {
             res.satus(500).send({ message: error.message || "Error Occured" });
     }
@@ -65,7 +65,7 @@ exports.updateQuestion = async (req, res) => {
     try{
        let questionId = req.params.id;
        const getdetails = await Question.findById(questionId);
-       res.render('update-question', { title: 'News Blog - Submit News',getdetails });
+       res.render('Question/update-question', { title: 'News Blog - Submit News',getdetails });
     }catch (error) {
             res.satus(500).send({ message: error.message || "Error Occured" });
     }
