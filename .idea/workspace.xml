@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch" />
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/car.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/fl2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/flood.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/gfg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/gg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/hh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/mediaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/mediaController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jobs/media-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/jobs/media-index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jobs/submit-media.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/jobs/submit-media.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jobs/update-media.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/jobs/update-media.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +54,7 @@
       <workItem from="1637597459622" duration="1060000" />
       <workItem from="1637598543741" duration="627000" />
       <workItem from="1638076212213" duration="3082000" />
+      <workItem from="1638107353671" duration="1070000" />
     </task>
     <task id="LOCAL-00001" summary="surangi branch">
       <created>1637598323523</created>

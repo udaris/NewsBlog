@@ -176,7 +176,7 @@ exports.deleteMedia = async (req, res) => {
   try{
       let mediaId = req.params.id;
       await Media.findByIdAndDelete(mediaId);
-      res.redirect('/media-index');
+      res.redirect('/media');
   }catch (error) {
       res.status(500).send({ message: error.message || "Error Occurred" });
   }
@@ -189,14 +189,14 @@ exports.deleteMedia = async (req, res) => {
 exports.updateMediaRecord = async (req, res) => {
   try{
       let mediaId = req.params.id;
-      const {description,jobrq,image}=req.body;
-      const updatingMedia= {          
-          description,
-          jobrq,
+      const {name,description,image}=req.body;
+      const updatingMedia= {   
+          name,       
+          description,   
           image
       }
       await Media.findByIdAndUpdate(mediaId,updatingMedia);
-      res.redirect('/media-index');
+      res.redirect('/media');
   }catch (error) {
       res.status(500).send({ message: error.message || "Error Occurred" });
   }
