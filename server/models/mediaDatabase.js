@@ -9,7 +9,5 @@ db.once('open', function(){
 
 
 //Models
-require('./Category');
-require('./News');
-require('./Question');
-require('./FeedBack');
+require('./mediaCategory');
+require('./Media');

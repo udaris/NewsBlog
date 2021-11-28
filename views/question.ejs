@@ -1,0 +1,43 @@
+<h1 class="pb-4">Explore Questions</h1>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Explore Questions</li>
+  </ol>
+</nav>
+
+
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <a href="/submit-question" class="btn btn-primary btn-blue btn-lg">Submit Questions</a>
+</div>
+<br/>
+<br/>
+
+<div>
+ 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(questions != '') { %>
+        <% questions.forEach(function(questions,question) { %>
+      <tr>
+        <td><%= questions.question %></td>
+        <td><%= questions.answer %></td>
+        <td><a href="/update-question/<%- questions._id %>"  class="btn btn-primary btn-dark btn-lg">Edit</a>
+           <a href="/delete-question/<%- questions._id %>" onclick="return confirm('Are you sure to delete this record?');"  class="btn btn-primary btn-danger btn-lg">Delete</button>
+      </td>
+      </tr>
+      <% }) %>
+    <% } else { %>
+      <p>No Questions found.</p>
+    <% } %>
+    </tbody> 
+  </table>
+</div>

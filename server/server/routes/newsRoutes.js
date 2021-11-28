@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const newsController = require('../controllers/newsController');
+const questionController = require('../controllers/questionController');
+
+
+const mediaController = require('../controllers/mediaController');
 /**
  * App routes
  */
@@ -19,5 +23,23 @@ router.post('/submit-news', newsController.submitNewsOnPost);
 router.get('/delete-news/:id', newsController.deleteNews);
 router.get('/update-news/:id', newsController.updateNews);
 router.post('/update-newsDetails/:id', newsController.updateNewsDetails);
+
+
+router.get('/media', mediaController.homepage);
+router.get('/mediacategories', mediaController.exploreMediacategories);
+router.get('/media/:id', mediaController.exploreMedia );
+router.get('/mediacategories/:id', mediaController.exploreMediacategoriesById);
+router.get('/mediaexplore-latest', mediaController.exploreLatest);
+router.get('/mediaexplore-random', mediaController.exploreRandom);
+router.get('/submit-media', mediaController.submitMedia);
+router.post('/submit-media', mediaController.submitMediaOnPost);
+
+router.get('/question',questionController.question);
+router.get('/submit-question', questionController.submitQuestion);
+router.post('/submit-question', questionController.submitQuestionOnPost);
+router.get('/update-question/:id', questionController.updateQuestion);
+router.get('/delete-question/:id', questionController.deleteQuestion);
+router.post('/update-questionrecord/:id', questionController.updateQuestionRecord);
+
 
 module.exports = router;

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="media changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/tharindu" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="features/1.0.0" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,7 +33,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/NEWS2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -59,8 +61,7 @@
       <updated>1637597456968</updated>
       <workItem from="1637597459622" duration="1060000" />
       <workItem from="1637598543741" duration="627000" />
-      <workItem from="1638086168759" duration="476000" />
-      <workItem from="1638094233214" duration="1964000" />
+      <workItem from="1638041537341" duration="6738000" />
     </task>
     <task id="LOCAL-00001" summary="surangi branch">
       <created>1637598323523</created>
@@ -69,42 +70,7 @@
       <option name="project" value="LOCAL" />
       <updated>1637598323523</updated>
     </task>
-    <task id="LOCAL-00002" summary="test">
-      <created>1638088490385</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1638088490386</updated>
-    </task>
-    <task id="LOCAL-00003" summary="default">
-      <created>1638091737355</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1638091737355</updated>
-    </task>
-    <task id="LOCAL-00004" summary="delete video">
-      <created>1638091784128</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1638091784128</updated>
-    </task>
-    <task id="LOCAL-00005" summary="app.js changes">
-      <created>1638094689420</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1638094689420</updated>
-    </task>
-    <task id="LOCAL-00006" summary="media changes">
-      <created>1638095167281</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1638095167281</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,48 +84,12 @@
             <State />
           </value>
         </entry>
-        <entry key="f708eded-a791-43eb-b814-c93194336962">
-          <value>
-            <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="structure">
-                    <value>
-                      <list>
-                        <option value="dir:F:/e books/L3S1/ADMS/assignment/NewsBlog/public" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="f708eded-a791-43eb-b814-c93194336962" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="surangi branch" />
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="test" />
-    <MESSAGE value="default" />
-    <MESSAGE value="delete video" />
-    <MESSAGE value="app.js changes" />
-    <MESSAGE value="media changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="media changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="surangi branch" />
   </component>
 </project>
