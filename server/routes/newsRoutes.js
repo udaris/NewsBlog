@@ -33,6 +33,9 @@ router.get('/mediaexplore-latest', mediaController.exploreLatest);
 router.get('/mediaexplore-random', mediaController.exploreRandom);
 router.get('/submit-media', mediaController.submitMedia);
 router.post('/submit-media', mediaController.submitMediaOnPost);
+router.get('/jobs/update-media/:id', mediaController.updateMedia);
+router.post('/update-mediarecord/:id', mediaController.updateMediaRecord);
+router.get('/jobs/delete-media/:id', mediaController.deleteMedia);
 
 router.get('/question',questionController.question);
 router.get('/submit-question', questionController.submitQuestion);
