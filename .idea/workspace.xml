@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch" />
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch">
+      <change beforePath="$PROJECT_DIR$/server/server/controllers/newsController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/models/Category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/models/News.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/models/database.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/routes/newsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/newsRoutes.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="21HUMEO1MKYTkt2IWPlVy47H7SU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,6 +89,11 @@
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="f708eded-a791-43eb-b814-c93194336962">
           <value>
             <State />
           </value>
