@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch">
-      <change afterPath="$PROJECT_DIR$/server/controllers/videoController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/video/video.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/feedbackController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/feedbackController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/recipeRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/recipeRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/FeedBack/update-feedback.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/FeedBack/update-feedback.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/main.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="features/1.0.0" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
