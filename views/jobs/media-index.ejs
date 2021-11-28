@@ -20,7 +20,7 @@
 
 <!-- mediacategories Start -->
 
-  <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+  <!-- <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
 
     <% if(mediacategories != '') { %>
       <% mediacategories.forEach(function(category, index) { %>
@@ -42,7 +42,7 @@
           <div class="pt-1">View All</div>
         </a>
 
-  </div>
+  </div> -->
 
   <!-- Categories End -->
 
@@ -60,7 +60,7 @@
       <% if(news != '') { %>
         <% news.latest.forEach(function(media, index){ %>
         <a href="/media/<%= media._id %>" class="col text-center category__link">
-          <div class="category__img category__img--large shadow">
+          <div class="category__img category__img shadow">
             <img src="/uploads/<%= media.image %>" alt="<%= media.name %>" loading="lazy">
           </div>
           <div class="pt-1"><%= media.name %></div>
