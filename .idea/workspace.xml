@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="surangi branch">
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+    <list default="true" id="462833da-20ff-43e1-8000-7b6f518791c2" name="Default Changelist" comment="app.js">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/1638038861109chinese-food.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/mediaRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/FeedBack/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/explore-question.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jobs/update-media.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/question.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/submit-question.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/update-question.ejs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637598323523</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="app.js">
+      <created>1638091366508</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638091366508</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,6 +88,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="surangi branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="surangi branch" />
+    <MESSAGE value="app.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="app.js" />
   </component>
 </project>
