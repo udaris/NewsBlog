@@ -32,8 +32,10 @@ app.use(bodyparser.json);*/
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
-const routes = require('./server/routes/recipeRoutes.js')
+const routes = require('./server/routes/recipeRoutes.js');
+const routes2 = require('./server/routes/questionRoutes.js');
 app.use('/', routes);
+app.use('/', routes2);
 
 app.listen(port, () => console.log(`Listening to port ${port}`));
 

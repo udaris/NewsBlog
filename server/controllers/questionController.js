@@ -46,12 +46,12 @@ exports.submitQuestionOnPost = async (req, res) => {
         });
         await newQuestion.save();
         req.flash('infoSubmit','Question has been already added');
-        res.redirect('/question');
+        res.redirect('/Question/question');
         
     }catch (error) {
            // req.flash('infoErrors',error)
            res.json(error);
-            res.redirect('/submit-question');
+            res.redirect('/Question/submit-question');
     }
 }
 
@@ -85,7 +85,7 @@ exports.updateQuestionRecord = async (req, res) => {
            answer
        }
        const update = await Question.findByIdAndUpdate(questionId,updatingQuestion);
-       res.redirect('/question');
+       res.redirect('/Question/question');
     }catch (error) {
             res.satus(500).send({ message: error.message || "Error Occured" });
     }
@@ -111,7 +111,7 @@ exports.deleteQuestion = async (req, res) => {
     try{
         let questionId = req.params.id;
         await Question.findByIdAndDelete(questionId);
-        res.redirect('/question');
+        res.redirect('/Question/question');
     }catch (error) {
         res.satus(500).send({ message: error.message || "Error Occured" });
     }

@@ -9,7 +9,7 @@
 
 
 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-    <a href="/submit-question" class="btn btn-primary btn-blue btn-lg">Submit Questions</a>
+    <a href="/Question/submit-question" class="btn btn-primary btn-blue btn-lg">Submit Questions</a>
 </div>
 <br/>
 <br/>
@@ -30,8 +30,8 @@
       <tr>
         <td><%= questions.question %></td>
         <td><%= questions.answer %></td>
-        <td><a href="/update-question/<%- questions._id %>"  class="btn btn-primary btn-dark btn-lg">Edit</a>
-           <a href="/delete-question/<%- questions._id %>" onclick="return confirm('Are you sure to delete this record?');"  class="btn btn-primary btn-danger btn-lg">Delete</button>
+        <td><a href="/Question/update-question/<%- questions._id %>"  class="btn btn-primary btn-dark btn-lg">Edit</a>
+           <a href="/Question/delete-question/<%- questions._id %>" onclick="return confirm('Are you sure to delete this record?');"  class="btn btn-primary btn-danger btn-lg">Delete</button>
       </td>
       </tr>
       <% }) %>
