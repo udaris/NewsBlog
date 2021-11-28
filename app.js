@@ -34,8 +34,10 @@ app.set('view engine', 'ejs');
 
 const routes = require('./server/routes/newsRoutes.js')
 const feedbackRoutes = require('./server/routes/feedbackRoutes.js');
+const routes2 = require('./server/routes/questionRoutes.js');
 app.use('/', routes);
 app.use('/', feedbackRoutes);
+app.use('/', routes2);
 
 app.listen(port, () => console.log(`Listening to port ${port}`));
 
