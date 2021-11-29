@@ -1,0 +1,53 @@
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Update User</h1>
+    <div class="col-lg-6 mx-auto">
+        
+    </div>
+</div>
+
+
+<div class="row justify-content-center">
+    <div class="col-8">
+
+        <form action="/updateUserRecord/<%= updateUser._id %>" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="_id"  value="<%= updateUser._id %>">
+
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="username" class="form-label">User Name</label>
+                    <input disabled type="text" name="username" id="name" class="form-control" >
+                </div>
+
+
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <textarea type="email" name="email" id="email" class="form-control" ></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" accept="password/*">
+                </div>
+
+                <div class="col-12">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" name="address" id="address" class="form-control" >
+                </div>
+                <div class="form__input-item">
+                    <label for="">Gender</label>
+                    <div class="radio-buttons">
+                        <input type="radio" name="gender" value="male" > Male
+                        <input type="radio" name="gender" value="female" > Female
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Update User</button><br/><br/><br/><br/><br/>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+   
+</div>

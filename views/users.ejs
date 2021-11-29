@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="form">
+        <div class="wrapper">
+            <h1>Add New Users</h1>
+            <div class="form__input-item">
+                <label for="">Username</label>
+                <input type="text" class="input">
+            </div>
+            <div class="form__input-item">
+                <label for="">Email</label>
+                <input type="text" class="input">
+            </div>
+            <div class="form__input-item">
+                <label for="">Password</label>
+                <input type="text" class="input">
+            </div>
+            <div class="form__input-item">
+                <label for="">Adrees</label>
+                <input type="text" class="input">
+            </div>
+            <div class="form__input-item">
+                <label for="">Gender</label>
+                <div class="radio-buttons">
+                    <input type="radio" name="gender" value="male" > Male
+                    <input type="radio" name="gender" value="female" > Female
+                </div>
+            </div>
+            <button class="form__input-button button">Add user</button>
+
+            </div>
+    </div> -->
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Add New User</h1>
+        <div class="col-lg-6 mx-auto">
+            <!-- <p class="lead">Share your news with thousands of web developers accross the world. Fill our form to get
+                started.</p> -->
+        </div>
+    </div>
+    
+    
+    <div class="row justify-content-center">
+    
+    
+        <% if(infoSubmitObj !='' ) { %>
+            <div class="col-8 alert alert-success" role="alert">
+                <%= infoSubmitObj %>
+            </div>
+            <% } %>
+    
+                <% if(infoErrorsObj !='' ) { %>
+                    <div class="col-8 alert alert-danger" role="alert">
+                        <%= infoErrorsObj[0].message %>
+                    </div>
+                    <% } %>
+    
+                        <div class="col-8">
+                            <form action="/users" enctype="multipart/form-data" method="POST">
+    
+                                <div class="row g-3">
+    
+                                    <div class="col-12">
+                                        <label for="username" class="form-label">Your Name</label>
+                                        <input type="text" name="username" id="username" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Your Email</label>
+                                        <input type="email" name="email" id="email" class="form-control" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="Password" class="form-label">Your Password</label>
+                                        <input type="password" name="password" id="password" class="form-control" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">Your Address</label>
+                                        <input type="text" name="address" id="address" class="form-control" required>
+                                    </div>
+
+                                    <div class="form__input-item">
+                                        <label for="">Gender</label>
+                                        <div class="radio-buttons">
+                                            <input type="radio" name="gender" value="male" > Male
+                                            <input type="radio" name="gender" value="female" > Female
+                                        </div>
+                                    </div>
+    
+                                    
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Submit User</button>
+                                    </div>
+    
+                                </div>
+    
+                            </form>
+    
+                        </div>
+    </div>
+
+</body>
+</html>

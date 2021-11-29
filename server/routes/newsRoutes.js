@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const newsController = require('../controllers/newsController');
 const questionController = require('../controllers/questionController');
-
+const userController = require('../controllers/userController');
 
 const mediaController = require('../controllers/mediaController');
 /**
@@ -40,6 +40,18 @@ router.post('/submit-question', questionController.submitQuestionOnPost);
 router.get('/update-question/:id', questionController.updateQuestion);
 router.get('/delete-question/:id', questionController.deleteQuestion);
 router.post('/update-questionrecord/:id', questionController.updateQuestionRecord);
+
+
+router.get('/Allusers', userController.exploreUsers);
+router.get('/profile/:id', userController.exploreUsersById);
+router.get('/updateUser/:id', userController.updateUser);
+router.post('/updateUserRecord/:id', userController.updateUserRecord);
+router.get('/deleteUser/:id', userController.deleteUser);
+router.put('/update/:id', userController.EditUser)
+router.delete('/delete/:id', userController.DeleteUser)
+router.get('/users', userController.userNav)
+router.post('/users', userController.newUser)
+
 
 
 module.exports = router;
