@@ -14,29 +14,14 @@
             <div class="row g-3">
                 <div class="col-12">
                     <label for="description" class="form-label">Job Titile</label>
-                    <input type="text" name="description" id="description" class="form-control" value="<%= updateMedia.name %>" required>
+                    <input type="text" name="name" id="name" class="form-control" value="<%= updateMedia.name %>" required>
                 </div>
 
-
                 <div class="col-12">
-                    <label for="jobrq" class="form-label">Job Requirments</label><br>
-                    <small>add requiments one by one</small>
-                    <div class="ingredientList">
-                      <div class="ingredeintDiv mb-1">
-                        <input type="text" id="jobrq" name="ingredients" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-12">
-                    <button type="button" class="btn btn-outline-primary" id="addIngredientsBtn">+ Add Another</button>
-                  </div>
+                    <label for="description" class="form-label">Job Descrition</label>
+                    <input type="text" name="description" id="description" class="form-control" value="<%= updateMedia.description %>" required>
+                </div>
 
-                <div class="col-12">
-                    <label for="image">Add New Image</label>
-                    <input type="file" class="form-control" name="image" id ="image" accept="image/*">
-                  </div>
-                
 
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Update </button><br/><br/><br/><br/><br/>
